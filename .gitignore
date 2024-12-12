@@ -1,0 +1,7 @@
+BoBaFor.egg-info/
+dist/
+build/
+example/PackageTroubleShoot.ipynb
+.snakemake
+__pycache__/
+BoBaFor/__pycache__/
