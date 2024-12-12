@@ -1,0 +1,44 @@
+Predictor:
+    balanced_features/Strongest_Sim1.txt # change to path of predictor matrix of interest
+Response:
+    balanced_responses/Sim1.txt # change to path of response vector of interest
+chi2Correct:
+    True
+FDRchi2Thresh:
+    0.05
+PreFilterDir:
+    PreFilterOut/
+PreFilterFileName:
+    PreFilterPredictor_Sim1.txt
+sim:
+    Sim1
+GridParamDepth:
+    4
+ScoreMetric:
+    'balanced_accuracy'
+RandSearch1_Niter:
+    250
+GridSearch1_CV:
+    100
+boruta_perc:
+    1.0
+boruta_pval:
+    0.05
+borutaSelect_perc:
+    1.0
+collect:
+    False
+boruta_reps:
+    100
+model:
+    RF
+RandSearch2_Niter:
+    250
+RandSearch2_CV:
+    1
+GridSearch2_CV:
+    100
+RankingFeatureIters:
+    1000
+PermImpInteralIter:
+    100

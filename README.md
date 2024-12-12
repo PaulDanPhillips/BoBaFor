@@ -5,17 +5,17 @@
 pip install BoBaFor
 ```
 ## Use
-### Downlaod example from GitHub
+### Download example from GitHub
 ```bash
 git clone https://github.com/PaulDanPhillips/BoBaFor.git
 ```
 ### **c**hange **d**irectory to example
 ```bash
-cd BoBaFor/example
+cd BoBaFor/examples
 ```
 ### Run the example data (user needs to pay attention to how many cores they have available and want to use)
 ```bash
-BoBaFor --config Sim1.yaml --cores 4
+BoBaFor --config example_config.yaml --cores 4
 ```
 ## Running your own data:
 ### Data organization
@@ -24,10 +24,10 @@ BoBaFor --config Sim1.yaml --cores 4
 
 * You will edit the Sim1.yaml file from the example directory.
 1. **Predictor**
-    * The absolute or relative path to your genetic feature matrix will take the place of """BoBaFor/example/BalancedArbitrayPredictor_Sim1.txt"""
+    * The absolute or relative path to your genetic feature matrix will take the place of """balanced_features/Strongest_Sim1.txt"""
     * /path/to/data/features.txt
 2. **Response**
-    * The absolute or relative path to your response phenotype vector will take the place of """BoBaFor/example/BalancedArbitrary_Response_1.txt"""
+    * The absolute or relative path to your response phenotype vector will take the place of """balanced_responses/Sim1.txt"""
     /path/to/daata/response.txt
 3. ***chi2Correct**
     * The user need to decie if they want to the chi2 prefilter step to be corrected via false-discovery-rate or not (only True or False)
@@ -86,4 +86,10 @@ BoBaFor --config Sim1.yaml --cores 4
     * The number of internal repetitions for Permutation Importance
     * (int)
 
-
+#### Output files:
+* Most important is **BorutaOUT_1.00.05_RF/FinalFeatures_RF/eatureImportance_Ranked_*.out** as it contains the genentic variants and their associated feature importance value.
+* Lots of information and plots on how the random forest tuning performed.
+    1. LSBSR_RFrandSearch1_*.txt contains the raw scores for the k-fold fitting from the first randomsearch
+    2. LSBSR_RFgridSearch1_*.txt contains the raw scores for the k-fold fitting from the first gridsearch
+    3. LSBSR_RFrandSearch2_*.txt contains the raw scores for the k-fold fitting from the second/final randomsearch
+    4. LSBSR_RFgridSearch2_*.txt contains the raw scores for the k-fold fitting from the second/final gridsearch
