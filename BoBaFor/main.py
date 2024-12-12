@@ -30,7 +30,7 @@ parser.add_argument(
 args = parser.parse_args()
 def main():
     print(args.config)
-    result=subprocess.run(["snakemake --snakefile "+'/'.join(os.path.abspath(BoBaFor.__file__).split('/')[:-1])+'/Snakefile'+ ' --configfile '+os.getcwd()+'/'+str(args.config) + ' --cores ' +str(args.cores)], shell=True, capture_output=True, text=True, check=False)
+    result=subprocess.run(["snakemake --nolock --snakefile "+'/'.join(os.path.abspath(BoBaFor.__file__).split('/')[:-1])+'/Snakefile'+ ' --configfile '+os.getcwd()+'/'+str(args.config) + ' --cores ' +str(args.cores)], shell=True, capture_output=True, text=True, check=False)
     print(result)
 if __name__ == '__main__':
     main()
