@@ -22,6 +22,10 @@ git clone https://github.com/PaulDanPhillips/BoBaFor.git
 ```bash
 cd BoBaFor/examples
 ```
+### Convert relative paths to absolute in example_config.yaml
+```bash
+python AddAbsolutePaths.py
+```
 ### Run the example data (user needs to pay attention to how many cores they have available and want to use)
 ```bash
 BoBaFor --config example_config.yaml --cores 4
