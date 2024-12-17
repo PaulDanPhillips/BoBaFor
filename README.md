@@ -1,13 +1,5 @@
 # BoBaFor
 * a bacterial genome wide association approach through utilizing machine learning practices.
-### Create Conda Virtual Environment with required python version
-```bash
-conda create -n BoBaFor_env python==3.11.10
-```
-### Activate BoBaFor_env
-```bash
-conda activate BoBaFor_env
-```
 ## installation
 ```bash
 pip install BoBaFor
@@ -21,10 +13,6 @@ git clone https://github.com/PaulDanPhillips/BoBaFor.git
 ```bash
 cd BoBaFor/examples
 ```
-### Run python script to adjust relative paths to absolute paths in example_config.yaml file
-```bash
-python AddAbsolutePaths.py
-```
 ### Run the example data (user needs to pay attention to how many cores they have available and want to use)
 ```bash
 BoBaFor --config example_config.yaml --cores 4
@@ -36,13 +24,13 @@ BoBaFor --config example_config.yaml --cores 4
 
 * You will edit the Sim1.yaml file from the example directory.
 1. **Predictor**
-    * The absolute path to your genetic feature matrix will take the place of """balanced_features/Strongest_Sim1.txt"""
+    * The absolute or relative path to your genetic feature matrix will take the place of """balanced_features/Strongest_Sim1.txt"""
     * /path/to/data/features.txt
 2. **Response**
-    * The absolute path to your response phenotype vector will take the place of """balanced_responses/Sim1.txt"""
+    * The absolute or relative path to your response phenotype vector will take the place of """balanced_responses/Sim1.txt"""
     /path/to/daata/response.txt
 3. ***chi2Correct**
-    * The user need to decide if they want to the chi2 prefilter step to be corrected via false-discovery-rate or not (only True or False)
+    * The user need to decie if they want to the chi2 prefilter step to be corrected via false-discovery-rate or not (only True or False)
     * True/False
 4. **FDRchi2Thresh**
     * The user needs to decide what the FDR chi2 threshold is for removing genetic features based on this chi2 test is. 
