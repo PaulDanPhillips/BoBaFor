@@ -17,7 +17,6 @@ pip install BoBaFor
 ```bash
 git clone https://github.com/PaulDanPhillips/BoBaFor.git
 ```
-
 ### **c**hange **d**irectory to example
 ```bash
 cd BoBaFor/examples
