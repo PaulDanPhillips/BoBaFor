@@ -57,12 +57,12 @@ rule Tuning:
 	    scorer = config['ScoreMetric'],
         model = config['model']
     output:
-        RFrandsearch = 'TuningOUT_'+str(config['model'])+'/LSBSR_RFrandSearch1_' + str(config['sim'])+'.txt',
+        RFrandsearch = 'TuningOUT_'+str(config['model'])+'/randSearch1_' + str(config['sim'])+'.txt',
         # RFrandsearchFIG = 'TuningOUT_'+str(config['model'])+'/RandSearchFIG1_'+str(config['sim'])+".png",
-        RFgridParms = 'TuningOUT_'+str(config['model'])+'/RFGridParamSpace1_'+str(config['sim'])+'.pickle',
-        RFgridsearch = 'TuningOUT_'+str(config['model'])+'/LSBSR_RFgridSearch1_'+str(config['sim'])+ '.txt',
+        RFgridParms = 'TuningOUT_'+str(config['model'])+'/GridParamSpace1_'+str(config['sim'])+'.pickle',
+        RFgridsearch = 'TuningOUT_'+str(config['model'])+'/gridSearch1_'+str(config['sim'])+ '.txt',
         RFgridsearchFIG = 'TuningOUT_'+str(config['model'])+'/GridSearchFIG1_'+str(config['sim'])+'.png',
-        RFparams = 'TuningOUT_'+str(config['model'])+'/RFOptimal_Tuning1_'+str(config['sim'])+".pickle",
+        RFparams = 'TuningOUT_'+str(config['model'])+'/Optimal_Tuning1_'+str(config['sim'])+".pickle",
         
     shell:
         "python "+'/'.join(os.path.abspath(BoBaFor.__file__).split('/')[:-1])+"/scripts/GWAS_Tuning_script1.py -p {input.predict} -r {input.response} -s {params.sim} -n {params.NumRandSearch1} -t {params.NumOptParams} -k {params.NumGridSearchCV1} -a {params.scorer} -m {params.model}"
@@ -103,12 +103,12 @@ rule ReTuning:
         scorer = config['ScoreMetric'],
 
     output:
-        RFrandsearch = 'TuningOUT_'+str(config['model'])+'/LSBSR_RFrandSearch2_' + str(config['sim'])+'.txt',
+        RFrandsearch = 'TuningOUT_'+str(config['model'])+'/randSearch2_' + str(config['sim'])+'.txt',
         # RFrandsearchFIG = 'TuningOUT_'+str(config['model'])+'/RandSearchFIG2_'+str(config['sim'])+".png",
-        RFgridParms = 'TuningOUT_'+str(config['model'])+'/RFGridParamSpace2_'+str(config['sim'])+'.pickle',
-        RFgridsearch = 'TuningOUT_'+str(config['model'])+'/LSBSR_RFgridSearch2_'+str(config['sim'])+ '.txt',
+        RFgridParms = 'TuningOUT_'+str(config['model'])+'/GridParamSpace2_'+str(config['sim'])+'.pickle',
+        RFgridsearch = 'TuningOUT_'+str(config['model'])+'/gridSearch2_'+str(config['sim'])+ '.txt',
         RFgridsearchFIG = 'TuningOUT_'+str(config['model'])+'/GridSearchFIG2_'+str(config['sim'])+'.png',
-        RFparams = 'TuningOUT_'+str(config['model'])+'/RFOptimal_Tuning2_'+str(config['sim'])+".pickle",
+        RFparams = 'TuningOUT_'+str(config['model'])+'/Optimal_Tuning2_'+str(config['sim'])+".pickle",
     shell:
         "python "+'/'.join(os.path.abspath(BoBaFor.__file__).split('/')[:-1])+"/scripts/GWAS_ReTuning_script3.py -p {input.SelectFiles} -r {input.response} -s {params.sim} -n {params.NumRandSearch2} -t {params.NumRandSearchCV2} -k {params.NumGridSearchCV2} -a {params.scorer} -m {params.mod}"
 
@@ -126,9 +126,9 @@ rule FeatureRank:
         mod = config['model'],
         scorer = config['ScoreMetric']
     output:
-        PermImp ="FinalFeatures_"+str(config['model'])+"/PermutationImportance_Ranked_"+config['sim']+'.out',
+        # PermImp ="FinalFeatures_"+str(config['model'])+"/PermutationImportance_Ranked_"+config['sim']+'.out',
         FeatImp = "FinalFeatures_"+str(config['model'])+"/FeatureImportance_Ranked_"+config['sim'] + '.out',
         # Impplot = 'ImportanceBarPlot_' + config['sim']+'.png',
-        Shap ="FinalFeatures_"+str(config['model'])+'/SHAPster_Ranked_'+config['sim']+'.out',
+        # Shap ="FinalFeatures_"+str(config['model'])+'/SHAPster_Ranked_'+config['sim']+'.out',
     shell:
         "python "+'/'.join(os.path.abspath(BoBaFor.__file__).split('/')[:-1])+"/scripts/GWAS_Ranking_script4.py -p {input.predict} -r {input.response} -s {params.sim} -n {params.iter} -k {params.PermImpIter} -m {params.mod} -t {params.scorer}"

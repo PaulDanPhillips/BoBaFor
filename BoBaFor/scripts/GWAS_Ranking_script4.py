@@ -34,7 +34,7 @@ print((Y.shape))
 print((Y.value_counts()))
 
 # %% Read optimized model parameters
-with open('TuningOUT_'+ str(options.model)+'/RFOptimal_Tuning2_'+options.sim+'.pickle', 'rb') as filehandle:
+with open('TuningOUT_'+ str(options.model)+'/Optimal_Tuning2_'+options.sim+'.pickle', 'rb') as filehandle:
     RFoptimal=pickle.load(filehandle)
 # RFoptimal = pickle.load('TuningOUT/RFOptimal_Tuning2_'+options.sim+'.pickle')
 

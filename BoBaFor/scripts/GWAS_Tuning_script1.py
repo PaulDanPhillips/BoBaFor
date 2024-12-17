@@ -72,7 +72,7 @@ TUNINGdir = os.getcwd()
 print(os.getcwd())
 # TuneObj.repeat = options.randCV
 RF = TuneObj.Tuning_RandomSearch_classify(X=X, Y=Y, repeat=1, n_splits=n_splits, scorer=options.metric, mod=mod, hyperparameters=param_space, n_iter=options.randNiter, n_jobs=numCores, stratify=True) #, n_jobs=numCores
-RF.to_csv('LSBSR_RFrandSearch1_' + options.sim+'.txt', sep='\t')
+RF.to_csv('randSearch1_' + options.sim+'.txt', sep='\t')
 
 
  ################################################################
@@ -80,7 +80,7 @@ RF.to_csv('LSBSR_RFrandSearch1_' + options.sim+'.txt', sep='\t')
 # RF = pd.read_csv('LSBSR_RFrandSearch1_'+options.sim+'.txt', sep='\t')
 ParamFigObj = PMA.Param_analysis()
 # CountData = ParamFigObj.RandomSearchAnalysis(RF, 0.25, 3, 'mean_test_score', figTitle='Random Forest Parameter Count \n of Top scorers from RandomSearchCV', figname="RandSearchFIG1_"+options.sim+".png")
-RFGridParamSpace = ParamFigObj.RandSearchParamGrid(RF, num_opt=options.gridepth, outdir=os.getcwd(), outfile='RFGridParamSpace1_'+options.sim+'.pickle')
+RFGridParamSpace = ParamFigObj.RandSearchParamGrid(RF, num_opt=options.gridepth, outdir=os.getcwd(), outfile='GridParamSpace1_'+options.sim+'.pickle')
 
 # RFGridParamSpace = ParamFigObj.RandSearchParamGrid(RF, num_opt=options.gridepth,  outfile='RFGridParamSpace1_'+options.sim+'.pickle')
 
@@ -92,7 +92,7 @@ print(options.gridCV)
 if options.gridCV==0:
     print("ENTERED NO GridSearch")
     emptyDF = pd.DataFrame(list())
-    emptyDF.to_csv('LSBSR_RFgridSearch1_'+options.sim+ '.txt')
+    emptyDF.to_csv('gridSearch1_'+options.sim+ '.txt')
     emptyDF.to_csv('GridSearchFIG1_'+options.sim+'.png')
     # with('LSBSR_RFgridSearch1_'+options.sim+ '.txt', 'w') as file:
     #     pass
@@ -113,13 +113,13 @@ if options.gridCV==0:
         RFoptimal = RandomForestClassifier(random_state=RAND, class_weight=class_weight, **RFbestParams)
     elif options.model =='XGB':
         RFoptimal = XGBClassifier(objective='binary:logistic', eval_metric='logloss', use_label_encoder=False, random_state=RAND, scale_pos_weight=len(Y==0)/len(Y==1), **RFbestParams) #873/236 BinaryFocalLoss
-    with open('RFOptimal_Tuning1_'+options.sim+'.pickle', 'wb') as handle:
+    with open('Optimal_Tuning1_'+options.sim+'.pickle', 'wb') as handle:
         pickle.dump(RFoptimal, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 elif options.gridCV>0:
     print("ENTERED GridSearch")
     RF = TuneObj.Tuning_GridSearch_classify(X=X, Y=Y, repeat=TuneObj.repeat, n_splits=n_splits, scorer=options.metric, mod=mod, hyperparameters=RFGridParamSpace, n_jobs=numCores, stratify=True) #, n_jobs=numCores
-    RF.to_csv('LSBSR_RFgridSearch1_'+options.sim+ '.txt', sep='\t')
+    RF.to_csv('gridSearch1_'+options.sim+ '.txt', sep='\t')
 
 
     ################################################################
@@ -172,7 +172,7 @@ elif options.gridCV>0:
         print(pval, RFoptimal)
     else:
         print('SOMETHING IS BROKEN')
-    with open('RFOptimal_Tuning1_'+options.sim+'.pickle', 'wb') as handle:
+    with open('Optimal_Tuning1_'+options.sim+'.pickle', 'wb') as handle:
         pickle.dump(RFoptimal, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 else:
