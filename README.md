@@ -1,6 +1,15 @@
 # BoBaFor
 * a bacterial genome wide association approach through utilizing machine learning practices.
 ## installation
+### Create Conda Virtual Environment with required python version
+```bash
+conda create -n BoBaFor_env python==3.11.10
+```
+### Activate BoBaFor_env
+```bash
+conda activate BoBaFor_env
+```
+### install BoBaFor via pip
 ```bash
 pip install BoBaFor
 ```
