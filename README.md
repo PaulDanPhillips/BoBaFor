@@ -99,10 +99,26 @@ BoBaFor --config example_config.yaml --cores 4
     * The number of internal repetitions for Permutation Importance
     * (int)
 
-#### Output files:
+## Output files:
 * Most important is **BorutaOUT_1.00.05_RF/FinalFeatures_RF/eatureImportance_Ranked_*.out** as it contains the genentic variants and their associated feature importance value.
 * Lots of information and plots on how the random forest tuning performed.
     1. LSBSR_RFrandSearch1_*.txt contains the raw scores for the k-fold fitting from the first randomsearch
     2. LSBSR_RFgridSearch1_*.txt contains the raw scores for the k-fold fitting from the first gridsearch
     3. LSBSR_RFrandSearch2_*.txt contains the raw scores for the k-fold fitting from the second/final randomsearch
     4. LSBSR_RFgridSearch2_*.txt contains the raw scores for the k-fold fitting from the second/final gridsearch
+
+1. BorutaOUT_1.00.05_RF/PreFilterOut/PreFilterPredictor_Sim1.txt
+2. BorutaOUT_1.00.05_RF/TuningOUT_RF/GridParamSpace1_Sim1.pickle
+3. BorutaOUT_1.00.05_RF/TuningOUT_RF/GridParamSpace2_Sim1.pickle
+4. BorutaOUT_1.00.05_RF/TuningOUT_RF/gridSearch1_Sim1.txt
+5. BorutaOUT_1.00.05_RF/TuningOUT_RF/gridSearch2_Sim1.txt
+6. BorutaOUT_1.00.05_RF/TuningOUT_RF/GridSearchFIG1_Sim1.png
+7. BorutaOUT_1.00.05_RF/TuningOUT_RF/GridSearchFIG2_Sim1.png
+8. BorutaOUT_1.00.05_RF/TuningOUT_RF/Optimal_Tuning1_Sim1.pickle
+9. BorutaOUT_1.00.05_RF/TuningOUT_RF/Optimal_Tuning2_Sim1.pickle
+10. BorutaOUT_1.00.05_RF/TuningOUT_RF/randSearch1_Sim1.txt
+11. BorutaOUT_1.00.05_RF/TuningOUT_RF/randSearch2_Sim1.txt
+12. BorutaOUT_1.00.05_RF/BorutaOUT/RF_Boruta_Selected_Sim1.txt
+13. BorutaOUT_1.00.05_RF/BorutaOUT/RF_Boruta_Tentative_Sim1.txt
+14. BorutaOUT_1.00.05_RF/BorutaOUT/RF_FinalFeatureMatrix_BorutaSelected_Sim1.txt
+15. BorutaOUT_1.00.05_RF/FinalFeatures_RF/FeatureImportance_Ranked_Sim1.out
