@@ -66,17 +66,17 @@ os.chdir('TuningOUT_' + str(options.model))
 TUNINGdir = os.getcwd()
 
 RF = TuneObj.Tuning_RandomSearch_classify(X=X, Y=Y, repeat=options.randCV, n_splits=n_splits, scorer=options.metric, mod=mod, hyperparameters=param_space, n_iter=options.randNiter, n_jobs=numCores) #n_jobs=numCores
-RF.to_csv('LSBSR_RFrandSearch2_'+options.sim+'.txt', sep='\t')
+RF.to_csv('randSearch2_'+options.sim+'.txt', sep='\t')
 ParamFigObj = PMA.Param_analysis()
 # CountData = ParamFigObj.RandomSearchAnalysis(RF, 0.25, 3, 'mean_test_score', figTitle='Random Forest Parameter Count \n of Top scorers from RandomSearchCV', figname="RandSearchFIG2_"+options.sim+".png")
 
-RFGridParamSpace = ParamFigObj.RandSearchParamGrid(RF, num_opt=3, outdir=os.getcwd(), outfile='RFGridParamSpace2_'+options.sim+'.pickle')
+RFGridParamSpace = ParamFigObj.RandSearchParamGrid(RF, num_opt=3, outdir=os.getcwd(), outfile='GridParamSpace2_'+options.sim+'.pickle')
 
 # %% ################################################################
 # os.chdir("../TuningOUT")
 TuneObj.repeat = options.gridCV
 RF = TuneObj.Tuning_GridSearch_classify(X=X, Y=Y, repeat=TuneObj.repeat, n_splits=n_splits, scorer=options.metric, mod=mod, hyperparameters=RFGridParamSpace, n_jobs=numCores) #n_jobs=numCores
-RF.to_csv('LSBSR_RFgridSearch2_'+options.sim+'.txt', sep='\t')
+RF.to_csv('gridSearch2_'+options.sim+'.txt', sep='\t')
 
 
 ParamFigObj = PMA.Param_analysis()
@@ -126,5 +126,5 @@ elif len(pvalLST)==0:
     print(pval, RFoptimal)
 else:
     print('SOMETHING IS BROKEN')
-with open('RFOptimal_Tuning2_'+options.sim+'.pickle', 'wb') as handle:
+with open('Optimal_Tuning2_'+options.sim+'.pickle', 'wb') as handle:
     pickle.dump(RFoptimal, handle, protocol=pickle.HIGHEST_PROTOCOL)

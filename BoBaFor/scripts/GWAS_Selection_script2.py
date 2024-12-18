@@ -35,7 +35,7 @@ X, Y, n_splits, class_weight =TuneObj.XY_index(X=options.lsbsr, Y=options.abx, B
 RAND=np.random.RandomState(4)
 
 # RFoptimal = pickle.load('TuningOUT/RFOptimal_Tuning1_'+options.sim+'.pickle')
-with open('TuningOUT_'+str(options.model)+'/RFOptimal_Tuning1_'+options.sim+'.pickle', 'rb') as filehandle:
+with open('TuningOUT_'+str(options.model)+'/Optimal_Tuning1_'+options.sim+'.pickle', 'rb') as filehandle:
     RFoptimal=pickle.load(filehandle)
 
 NewNASPobj = FeatSelection(percent=options.perc, alpha=options.pval, v=1, max_iter=2500, repeat=options.rep)
