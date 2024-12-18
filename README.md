@@ -103,7 +103,7 @@ BoBaFor --config example_config.yaml --cores 4
 * Most important is **BorutaOUT_1.00.05_RF/FinalFeatures_RF/eatureImportance_Ranked_*.out** as it contains the genentic variants and their associated feature importance value.
 
    1. BorutaOUT_1.00.05_RF/PreFilterOut/PreFilterPredictor_Sim1.txt
-     * The features that pass the chi2 prefilter set in the config.yaml file
+        * The features that pass the chi2 prefilter set in the config.yaml file
    3. BorutaOUT_1.00.05_RF/TuningOUT_RF/GridParamSpace1_Sim1.pickle 
    5. BorutaOUT_1.00.05_RF/TuningOUT_RF/GridParamSpace2_Sim1.pickle
    6. BorutaOUT_1.00.05_RF/TuningOUT_RF/gridSearch1_Sim1.txt
@@ -112,7 +112,7 @@ BoBaFor --config example_config.yaml --cores 4
    9. BorutaOUT_1.00.05_RF/TuningOUT_RF/GridSearchFIG2_Sim1.png
    10. BorutaOUT_1.00.05_RF/TuningOUT_RF/Optimal_Tuning1_Sim1.pickle
    11. BorutaOUT_1.00.05_RF/TuningOUT_RF/Optimal_Tuning2_Sim1.pickle
-      * The optimized model used to rank the genetic features. This can be used with the explainable AI shap to best interpret the model if desired.
+        * The optimized model used to rank the genetic features. This can be used with the explainable AI shap to best interpret the model if desired.
    12. BorutaOUT_1.00.05_RF/TuningOUT_RF/randSearch1_Sim1.txt
    13. BorutaOUT_1.00.05_RF/TuningOUT_RF/randSearch2_Sim1.txt
    14. BorutaOUT_1.00.05_RF/BorutaOUT/RF_Boruta_Selected_Sim1.txt
