@@ -7,7 +7,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import RandomizedSearchCV
 from scipy.stats import chi2_contingency#, false_discovery_control
 import statsmodels.stats.multitest as multi
-from ClassIndexing import Indexing
+from BoBaFor.ClassIndexing import Indexing
 
 class Tuning(Indexing):
     """
