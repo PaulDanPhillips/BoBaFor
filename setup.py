@@ -9,6 +9,7 @@ setup(
     name="BoBaFor",
     packages=find_packages(include=["BoBaFor", "BoBaFor.*", "BoBaFor.Snakefile", "BoBaFor.main.py"]),
     version="0.0.8",
+    # version="1.0",
     python_requires='==3.11.10',
     package_data={'BoBaFor': ['Snakefile', 'GWAS.yml', 'BoBaFor.yml']},
     install_requires=['pandas', 'scipy', 'statsmodels','numpy==1.23.5', 'scikit-learn', 'xgboost', 'matplotlib',  'snakemake', 'Boruta', 'shap', 'seaborn','plotnine', 'pytest'], #'joblib',
