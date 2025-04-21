@@ -5,6 +5,7 @@ from pathlib import Path
 from sklearn.inspection import permutation_importance
 from ClassIndexing import Indexing
 import shap
+from BoBaFor.TreeTune.ClassIndexing import Indexing 
 
 class FeatSelection(Indexing):
     """
