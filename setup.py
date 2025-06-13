@@ -8,7 +8,7 @@ setup(
     description="A machine learning approach for conducting genome wide association studies (GWAS) on bacteria",
     name="BoBaFor",
     packages=find_packages(include=["BoBaFor", "BoBaFor.*", "BoBaFor.Snakefile", "BoBaFor.main.py"]),
-    version="0.0.8",
+    version="0.0.9",
     # version="1.0",
     python_requires='==3.11.10',
     package_data={'BoBaFor': ['Snakefile', 'GWAS.yml', 'BoBaFor.yml']},

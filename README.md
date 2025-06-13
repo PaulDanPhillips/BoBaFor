@@ -26,9 +26,9 @@ cd BoBaFor/examples
 ```bash
 python AddAbsolutePaths.py
 ```
-### Run the example data (user needs to pay attention to how many cores they have available and want to use)
+### Run the example data (user needs to pay attention to how many cores they have available and want to use) This dataset will take ~8 hours with 24 cores.
 ```bash
-BoBaFor --config example_config.yaml --cores 4
+BoBaFor --config example_config.yaml --cores 24
 ```
 ## Running your own data:
 ### Data organization
